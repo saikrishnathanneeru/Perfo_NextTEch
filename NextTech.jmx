@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="NextTech">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
+        <intProp name="ThreadGroup.ramp_time">10</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">10</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP CookieManager" enabled="false">
+          <collectionProp name="CookieManager.cookies">
+            <elementProp name="__RequestVerificationToken" elementType="Cookie" testname="__RequestVerificationToken">
+              <stringProp name="Cookie.value">  el0pfkFDT5zNjyJ0uZy1eOqAbsdoCY7lTvER9Dlw7eZ8bAY2xOPESkrX8NBXuXIlptNth-LbVP9oOFBHZeDDzxV4vXDxX2CkRqLTfD0tYBc1</stringProp>
+              <stringProp name="Cookie.domain">dev-pm.centralus.cloudapp.azure.com </stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="NextechToken" elementType="Cookie" testname="NextechToken">
+              <stringProp name="Cookie.value">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE0NjAxIiwiaWF0IjoiMTc1NDQxNDYwMSIsImp0aSI6IjRhZGNhZTgzLWE3ZGYtNDlmNC1hNTk1LTI2NTU3M2FlZmFmNiIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE0NjAxIiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxNDYwMSwiZXhwIjoxNzU0NDU3ODAxLCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.hBdGHifLNkl0SfB0_rhSpndFrHmSP8ty6SIYxTlt8JOpUdkDpfIixoSKXc2x4HDN3kAWpi43ud798O4InsS2iq7CSpbn6xrGpzsB473Nq8kEQsknlerdpO8sRGqdacwOiiIKykHgsGTO9zLh0vUUMYYrNNnIxT6Wl2z8sVQ1SqCknyDZRZ-v9JZ9P3nWZnt_9h9dz6b4YsJCW3vT697ZkDTvBU3JpCdm7fTSMRLyy9w6FOahORMdARAmc5RbTGJx1SWREJYctAHZ4AR7K41eODBRIlYDt1oxPUiKUPq9KkicvSBdTTQ5c0wQJIUFmd4w0Sqfa5DgLqf76mLlviLb5g</stringProp>
+              <stringProp name="Cookie.domain">R5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE0NjAxIiwiaWF0IjoiMTc1NDQxNDYwMSIsImp0aSI6IjRhZGNhZTgzLWE3ZGYtNDlmNC1hNTk1LTI2NTU3M2FlZmFmNiIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE0NjAxIiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxNDYwMSwiZXhwIjoxNzU0NDU3ODAxLCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.hBdGHifLNkl0SfB0_rhSpndFrHmSP8ty6SIYxTlt8JOpUdkDpfIixoSKXc2x4HDN3kAWpi43ud798O4InsS2iq7CSpbn6xrGpzsB473Nq8kEQsknlerdpO8sRGqdacwOiiIKykHgsGTO9zLh0vUUMYYrNNnIxT6Wl2z8sVQ1SqCknyDZRZ-v9JZ9P3nWZnt_9h9dz6b4YsJCW3vT697ZkDTvBU3JpCdm7fTSMRLyy9w6FOahORMdARAmc5RbTGJx1SWREJYctAHZ4AR7K41eODBRIlYDt1oxPUiKUPq9KkicvSBdTTQ5c0wQJIUFmd4w0Sqfa5DgLqf76mLlviLb5g dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ASP.NET_SessionId" elementType="Cookie" testname="ASP.NET_SessionId">
+              <stringProp name="Cookie.value">  qziaqhalaqb1tfm0jjb5fcqq</stringProp>
+              <stringProp name="Cookie.domain">  dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="_ga" elementType="Cookie" testname="_ga">
+              <stringProp name="Cookie.value">GA1.1.1630919562.1741884402</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="_ga_9WXYK3PMB6" elementType="Cookie" testname="_ga_9WXYK3PMB6">
+              <stringProp name="Cookie.value">GS1.1.1741971420.2.0.1741971420.60.0.0</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ASP.NET_SessionId" elementType="Cookie" testname="ASP.NET_SessionId">
+              <stringProp name="Cookie.value">2tzywklolmw31kk0j1eaetui</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="__RequestVerificationToken" elementType="Cookie" testname="__RequestVerificationToken">
+              <stringProp name="Cookie.value">G46kQ7qphxmK1clwsxqv4yp7-NgxdAIZy5sseGCRrXviHQ64tTFDYrpm_VH1aJIdIQKQIDAv7JSENOXBF_LRKFdx8kcBKyq6gp9oEQPt-5U1</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ai_user" elementType="Cookie" testname="ai_user">
+              <stringProp name="Cookie.value">G6Q/h|2025-05-16T13:06:02.836Z</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="NextechToken" elementType="Cookie" testname="NextechToken">
+              <stringProp name="Cookie.value">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3NDAwODM3IiwiaWF0IjoiMTc0NzQwMDgzNyIsImp0aSI6ImI2MTViZDI0LTRhZjgtNDUxMC1iMTRiLWE2MTAxNjVhOTQ5NiIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzQ3NDAwODM3IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzQwMDgzNywiZXhwIjoxNzQ3NDQ0MDM3LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.Sulh0WYwZ5gVGlw5RL48M3Htx8e_LBwSqACDl5EDqKAUQaZUu1YfAcCo5v9mKDTevh5fUD5oZk64tM059ib9de3IXrIyz5XKDFd5iBxwZ9ipjcDgXZ4t1qQ2bQv6IXsNSN5k3FNiSC6y3NcUkSkaeR46Qh7Tg-h2QdLvt8Aq3tHDebIW4NfgkAedx9ge2-gtqWSusa0xEoVt6tMo1UQoR49hxF_zfj19U7gGJcXNmz2ORg_vo6lc3DArJveWAS4Gb7BGvc2hL5ll6M6jbdywKBUSOPkViosQeqy3r7mf4AfsGDW0cDzEBx7IsDmkZpjEgfkf71RlmSzKXRznmo2TKw</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="__stripe_mid" elementType="Cookie" testname="__stripe_mid">
+              <stringProp name="Cookie.value">43856d48-085a-4403-8d35-3ddb7ae2ff3d3acca3</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="__stripe_sid" elementType="Cookie" testname="__stripe_sid">
+              <stringProp name="Cookie.value">16f73ea6-ac5f-41dd-b239-23a47348f18e516528</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ai_session" elementType="Cookie" testname="ai_session">
+              <stringProp name="Cookie.value">wJxn9|1747400762938|1747401062682.6</stringProp>
+              <stringProp name="Cookie.domain">pm.dev.nextech.com</stringProp>
+              <stringProp name="Cookie.path">/api/appointment/worklist/book-appointments</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ASP.NET_SessionId" elementType="Cookie" testname="ASP.NET_SessionId">
+              <stringProp name="Cookie.value">qvao4jkggitrycymebyrcszz</stringProp>
+              <stringProp name="Cookie.domain">dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Cookie.path">/Account/Login</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="NextechToken" elementType="Cookie" testname="NextechToken">
+              <stringProp name="Cookie.value">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE3MjU1IiwiaWF0IjoiMTc1NDQxNzI1NSIsImp0aSI6ImExYzM0ZDdkLWMzZTItNGMzZC04ZDQwLTZmYjU3MjkzNmVmZCIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE3MjU1IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxNzI1NSwiZXhwIjoxNzU0NDYwNDU1LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.dpDDHfv42bznKued8mr0FHAvZGSFGzHidbw642vTmJVVMO9FC-x0lFcfkeii9YCqx90JFnyaugxZAbUPO6Gd6YSl5qibOtXxDUZC0RoL1Pj7ii-6ybPlTOqw4LAdv53s-LuzGoWaZ6cFrwGE5-JrWFvCoNBKLN8KZhLS5S9rcN03468wupWz2FVebMUPM6cIqHviDmvOC_Qsk6TdRgUHA8Y5M1Fuf9olB_OHlhQeTT6QEPNcLffMA3XEs9N4K3q0uxb-uBRQLslWcEAY4lIulpSXsr2lpS7JmTI9MdXumH7e2aqh9meSVglznU56Dd3VzzXCs1DKDPPQPMP5YQ8ADQ</stringProp>
+              <stringProp name="Cookie.domain">dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Cookie.path">/Account/Login</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="__RequestVerificationToken" elementType="Cookie" testname="__RequestVerificationToken">
+              <stringProp name="Cookie.value">KmKdKCJ136RStV328xSd1RkElOpArgWvcch6TyT-2F7OCwZ38IWwGDR5j4Z_sE0aPLlEUCfs3Oa76ICZ2RKIR3kgHsICw86_qdb2p9A8Ohk1</stringProp>
+              <stringProp name="Cookie.domain">dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Cookie.path">/Account/Login</stringProp>
+              <boolProp name="Cookie.secure">true</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2025-08-05T23:44:56.224712</stringProp>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+          <collectionProp name="AuthManager.auth_list">
+            <elementProp name="" elementType="Authorization">
+              <stringProp name="Authorization.url">https://dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Authorization.username">a.jarif@nextech.com</stringProp>
+              <stringProp name="Authorization.password">UVd)Kp91!</stringProp>
+              <stringProp name="Authorization.domain"></stringProp>
+              <stringProp name="Authorization.realm"></stringProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+          <boolProp name="AuthManager.clearEachIteration">true</boolProp>
+        </AuthManager>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="base_url" elementType="Argument">
+              <stringProp name="Argument.name">base_url</stringProp>
+              <stringProp name="Argument.value">dev-pm.centralus.cloudapp.azure.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Account Login" enabled="false">
+          <stringProp name="TestPlan.comments">Created from cURL on 2025-08-05T23:44:56.2237126</stringProp>
+          <stringProp name="HTTPSampler.domain">dev-pm.centralus.cloudapp.azure.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/Account/Login?AccountNumber=PLA001&amp;UserEmail=a.jarif%40nextech.com&amp;Password=UVd)Kp91!&amp;TimeZone=America%2FNew_York</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2025-08-05T23:44:56.224712</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="BasicPatientSearch">
+          <stringProp name="HTTPSampler.domain">${base_url}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/patient-search/BasicPatientSearch</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;search&quot;: &quot;a&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value"> ASP.NET_SessionId=2gz1cuidswcz0um2vcdbpcup; __RequestVerificationToken=G4-FjC6E3D3mGBL4dht7aELerq_g7MKB_kOMK5EyoS3FYeJGwxjQosHuQYSKIC03nQn-6fHzKV12t9OLl-EaQLiGdPy5xEPh3T0CLyt3-V41; ai_user=07Dny|2025-08-05T18:02:23.473Z; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE3MDg1IiwiaWF0IjoiMTc1NDQxNzA4NSIsImp0aSI6ImI5YzJmMGU0LTQ5NjYtNDU5Ni04MTVjLWQwOGRhOTRjNzBlMyIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE3MDg1IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxNzA4NSwiZXhwIjoxNzU0NDYwMjg1LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.jclCHbivjF68oVbIgblUcbc7yfdKNPwu17_SyQaGwpzG0TKiq3eMoQ0cWZ6zYqHFhz-xQ7R30-ugerm62BSa20zizumxrFVkzDBaQmAllG7T1NXvGKDSE1Af57a52S2aSLdQqYdBNAMHalgdJJZ7zyObLwI0RamdK8vyEh4EBJk04CJbQgkoPyJoiVi4IYMR9IKdpjaFAX3krPsNceyxHSztlWJYRMa8wF7x33Ry4Hhr8C4-3jsGKlbDUeF5WSkAmHzQykK4iH2MojXgpgq9HfXji4hWrDEgDr1Grb-ReuNN0F86lh2ew23dWU-t8iYXD-L0tdcEZE2j_gOF8RThUQ; __stripe_mid=85e8cffa-8b2a-4253-9893-22f319d583d5c78080; __stripe_sid=66218561-b7ec-4020-aef3-586a596ebcf9bfb4ba; ai_session=pNkVZ|1754419014822|1754419061689.5</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2025-08-06T00:14:13.9329755</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List Providers" enabled="true">
+          <stringProp name="TestPlan.comments">Created from cURL on 2025-08-06T00:14:13.9307918</stringProp>
+          <stringProp name="HTTPSampler.domain">dev-pm.centralus.cloudapp.azure.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/provider</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value"> ASP.NET_SessionId=2gz1cuidswcz0um2vcdbpcup; __RequestVerificationToken=G4-FjC6E3D3mGBL4dht7aELerq_g7MKB_kOMK5EyoS3FYeJGwxjQosHuQYSKIC03nQn-6fHzKV12t9OLl-EaQLiGdPy5xEPh3T0CLyt3-V41; ai_user=07Dny|2025-08-05T18:02:23.473Z; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE3MDg1IiwiaWF0IjoiMTc1NDQxNzA4NSIsImp0aSI6ImI5YzJmMGU0LTQ5NjYtNDU5Ni04MTVjLWQwOGRhOTRjNzBlMyIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE3MDg1IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxNzA4NSwiZXhwIjoxNzU0NDYwMjg1LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.jclCHbivjF68oVbIgblUcbc7yfdKNPwu17_SyQaGwpzG0TKiq3eMoQ0cWZ6zYqHFhz-xQ7R30-ugerm62BSa20zizumxrFVkzDBaQmAllG7T1NXvGKDSE1Af57a52S2aSLdQqYdBNAMHalgdJJZ7zyObLwI0RamdK8vyEh4EBJk04CJbQgkoPyJoiVi4IYMR9IKdpjaFAX3krPsNceyxHSztlWJYRMa8wF7x33Ry4Hhr8C4-3jsGKlbDUeF5WSkAmHzQykK4iH2MojXgpgq9HfXji4hWrDEgDr1Grb-ReuNN0F86lh2ew23dWU-t8iYXD-L0tdcEZE2j_gOF8RThUQ; __stripe_mid=85e8cffa-8b2a-4253-9893-22f319d583d5c78080; __stripe_sid=66218561-b7ec-4020-aef3-586a596ebcf9bfb4ba; ai_session=pNkVZ|1754419014822|1754419061689.5</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2025-08-06T00:14:13.9329755</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Book appointment">
+          <stringProp name="TestPlan.comments">Created from cURL on 2025-08-06T00:42:27.7560936</stringProp>
+          <stringProp name="HTTPSampler.domain">pm.dev.nextech.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/appointment/worklist/book-appointments?AccountNumber=PLA001&amp;UserEmail=a.jarif%40nextech.com&amp;Password=UVd)Kp91!&amp;TimeZone=America%2FNew_York</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[
+    {
+        &quot;startTime&quot;: &quot;2025-05-16T13:15:00&quot;,
+        &quot;patientId&quot;: 2500,
+        &quot;resourceId&quot;: 105,
+        &quot;facilityId&quot;: 422,
+        &quot;appointmentTypeId&quot;: 2,
+        &quot;appointmentReason&quot;: &quot;Breast Augmentation&quot;,
+        &quot;appointmentNotes&quot;: &quot;testApi&quot;,
+        &quot;patientWaitlistItemId&quot;: null,
+        &quot;apptToRescheduleId&quot;: null,
+        &quot;apptToRescheduleStatusId&quot;: null,
+        &quot;followUpPlanAlertId&quot;: null,
+        &quot;resourceId2&quot;: null
+    }
+]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic YS5qYXJpZkBuZXh0ZWNoLmNvbTpVVmQpS3A5MSE=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">ASP.NET_SessionId=cphlq2xgwdrzcxfyy2mamvxe; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzU0NDE4ODcyIiwiaWF0IjoiMTc1NDQxODg3MiIsImp0aSI6ImFiOTVkYjA3LTNiZWUtNGMyYS05N2ZhLTM5Nzc3MzEzMGU1MCIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzU0NDE4ODcyIiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1NDQxODg3MiwiZXhwIjoxNzU0NDYyMDcyLCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.MJs6tFOL4m2E07nMI8zagf5LPTy9PjFziM98r-DolkTdJIjW-exQHRRLgUWD-FDBxv3WltBHhuX9TxVfoceLiulBomWyt50uLmovw45p9mVlVxky8ZWgOqmaBMsIpuIhM_B7eD2IztI0aJY-1AQDN383wYBSssBOJMP_5vPkEmbqWmAragU1p0byuGCQUxbIpBs3giAEYaCkL7XL2FwJTbbcp3wi7k-yIL_WZjD_lDLzA-E23I6caCm2YYsjt1LP7kUAwvwd9QYOgENTo_fj5ybzleXzxrLbkycack7Qd0msjUIpa5TdrbgMOWIIMmIp5PGo9oLWGEFmnd3KdxSz1A</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2025-08-06T00:42:27.7560936</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
