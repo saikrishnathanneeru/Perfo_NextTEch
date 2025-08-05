@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "31b9a73d-300c-4edd-a8a6-590c3528b402",
+		"name": "pp v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406442",
+		"_collection_link": "https://nextech-systems.postman.co/workspace/Nextech-Systems-LLC~ff662181-8ca3-40c9-8e20-7274d76db9f6/collection/37769687-31b9a73d-300c-4edd-a8a6-590c3528b402?action=share&source=collection_link&creator=38406442"
+	},
+	"item": [
+		{
+			"name": "BasicPatientSearch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"search\": \"a\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/patient-search/BasicPatientSearch",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"patient-search",
+						"BasicPatientSearch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/administration/product/getList",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"administration",
+						"product",
+						"getList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Providers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/provider",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"provider"
+					]
+				},
+				"description": "### Get Provider Details\n\nThis endpoint makes an HTTP GET request to retrieve provider details from the server.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response Body\n\n- `providerId`: (string) The unique identifier of the provider.\n    \n- `name`: (string) The name of the provider.\n    \n- `email`: (string) The email address of the provider.\n    \n- `phone`: (string) The phone number of the provider.\n    \n- `address`: (string) The address of the provider."
+			},
+			"response": []
+		},
+		{
+			"name": "List Practice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "nx-practice-id",
+						"value": "MPV005",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/appointment-resource/online-scheduling",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"appointment-resource",
+						"online-scheduling"
+					],
+					"query": [
+						{
+							"key": "practiceNode",
+							"value": "b8f4ea02-94c0-4661-8602-3d87c1541161",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Service",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "requestverificationtoken",
+						"value": "{{RequestVerificationToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/administration/practiceservice/getList?deleted=false&isDescending=false&page=1&searchString=&sortColumn=name",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"administration",
+						"practiceservice",
+						"getList"
+					],
+					"query": [
+						{
+							"key": "deleted",
+							"value": "false"
+						},
+						{
+							"key": "isDescending",
+							"value": "false"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "searchString",
+							"value": ""
+						},
+						{
+							"key": "sortColumn",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/Account/Login?AccountNumber={{nx-practice-id}}&UserEmail={{username}}&Password={{password}}&TimeZone=America/New_Work",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"Account",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "AccountNumber",
+							"value": "{{nx-practice-id}}"
+						},
+						{
+							"key": "UserEmail",
+							"value": "{{username}}"
+						},
+						{
+							"key": "Password",
+							"value": "{{password}}"
+						},
+						{
+							"key": "TimeZone",
+							"value": "America/New_Work"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/patient-context?patientId=8227",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"patient-context"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "8227"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'https://qa-pm.centralus.cloudapp.azure.com/Administration/Provider/ProviderGeneralInfo/1' \\\r\n  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'cache-control: max-age=0' \\\r\n  -b 'ai_user=0HT1F|2025-04-08T15:37:07.863Z; __stripe_mid=cf055ce9-fa83-42bb-b261-84a3b45e70097bbc91; ASP.NET_SessionId=upwchkflewwz1r3sik2jimmq; __RequestVerificationToken=THiHQ8LWsNw9T_OmnQgvfdAqAc3SNCARQzxWQ-9KSdGR1i_rFHg1Rg49nOSZ2MLEHJCjvgicfQbSkXldlhBnn1057_iKNDv66cjrZnzsm0Q1; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3MDc5NjA3IiwiaWF0IjoiMTc0NzA3OTYwNyIsImp0aSI6ImVkZDY2YjIwLTIzZDEtNGEyMC05YTExLTlmNDQ2MGNhZDY0NSIsInN1YiI6IjkzMTEiLCJueF9pc254dXNlciI6IkZhbHNlIiwic3ViX2p3ayI6InhFd05QN29HcTlQdXNQbWZlWWdrSittWW1vRGxES2toVlhON2RPTXZCam5zbHJodTdrUmlCQy9laDJMczNCU25jdmZOZFJPMlg1eEluL1JiYlY4U0puMDMwdjA2OGdHYUI3Q2JFSkdITDQ0aGMxcmJqN2pyZGtqUFR0ZXNBN1NXVXVYZmdQOHMzSm96QVIvZHJUM2VsTFVaRjdlNUlQOWpOY1dxczRrZTByL3UyN3A5NUw4K2tuWndEYnJXTkNJa2VzK3hOM09jOGh2cldmWmxVWitXNi9MaEVWSS9aR2daVUk3RXpZeTR5ZjBOL0t4dmg5dDA0Sys3LzZiaGhNV1FJSFZrdTF0R0NjLzV3U1JJaSsrbEtXVnFFWFc0bUVwYXBSOURLL0RZbnVlOUJHTmhxdTcvQTVnbnFRYUQ1aHFpL0IrVzFSWmZGWVZIam9tQ1phbmhEdz09IiwidXBkYXRlZF9hdCI6IjE3NDcwNzk2MDciLCJ1cG4iOiJhLmphcmlmQG5leHRlY2guY29tIiwiZW1haWwiOiJhLmphcmlmQG5leHRlY2guY29tIiwibnhfcHBfYWNjdCI6IlBMQTAwMiIsIm54X2ljcF9hY2N0IjoiUExBV1JJUUEiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzA3OTYwNywiZXhwIjoxNzQ3MTIyODA3LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.I4-mtKVilZGatb_-QEHpMy4vO8idCMb7fYmgENV4Nk01mLRFB_JMmCwlFxWOxeOvJqIdzD-N6-XxMJNPwfdncBL539v12hqRvdbInwtQSOSO-xsx4OBrJ_H5uCFqu9UBePJ8r9r0pV4O7kYIg06oUotFTL4hmJZPkmwWip5shQIyZfSlQD3r1ErcaENfQTr1CTxBm4B1zwXIDlRt9aJTwwnf7esEYDY1mhtkp_MGvNQ_9tV3ynrCDgsdOj7ftMMEwidqejegvSKALXMjcFFByvjHmcjj-11EzYtunXDqEvCNOBZVH7FY7_2RZgeTilqBsuJLECjVCRnmh8h9gAO42w; __stripe_sid=f6a16f82-b58b-46a5-9ab0-ba9536d76a58b544cf; SupraMedBussApp=AccountNumber=BUSINESSAPPDB; ai_session=LSK4z|1747079600134|1747079962790.8' \\\r\n  -H 'priority: u=0, i' \\\r\n  -H 'referer: https://qa-pm.centralus.cloudapp.azure.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: document' \\\r\n  -H 'sec-fetch-mode: navigate' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'sec-fetch-user: ?1' \\\r\n  -H 'upgrade-insecure-requests: 1' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0' \\\r\n  --insecure"
+			},
+			"response": []
+		},
+		{
+			"name": "https://qa-pm.centralus.cloudapp.azure.com/api/user?expandRoles=true&expandUserPractices=true",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "expires",
+						"value": "0"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-pm.centralus.cloudapp.azure.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+					},
+					{
+						"key": "Cookie",
+						"value": "ai_user=0HT1F|2025-04-08T15:37:07.863Z; __stripe_mid=cf055ce9-fa83-42bb-b261-84a3b45e70097bbc91; __RequestVerificationToken=THiHQ8LWsNw9T_OmnQgvfdAqAc3SNCARQzxWQ-9KSdGR1i_rFHg1Rg49nOSZ2MLEHJCjvgicfQbSkXldlhBnn1057_iKNDv66cjrZnzsm0Q1; SupraMedBussApp=AccountNumber=BUSINESSAPPDB; ASP.NET_SessionId=ca2n215jy2bgdqlp0o0iewkt; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3MDg1NjM5IiwiaWF0IjoiMTc0NzA4NTYzOSIsImp0aSI6IjczYWM2ZWI3LTEzNjYtNGZjOC04YjA5LWZlZjRjODE5MjdhNCIsInN1YiI6IjkzMTEiLCJueF9pc254dXNlciI6IkZhbHNlIiwic3ViX2p3ayI6InhFd05QN29HcTlQdXNQbWZlWWdrSittWW1vRGxES2toVlhON2RPTXZCam5zbHJodTdrUmlCQy9laDJMczNCU25jdmZOZFJPMlg1eEluL1JiYlY4U0puMDMwdjA2OGdHYUI3Q2JFSkdITDQ0aGMxcmJqN2pyZGtqUFR0ZXNBN1NXVXVYZmdQOHMzSm96QVIvZHJUM2VsTFVaRjdlNUlQOWpOY1dxczRrZTByL3UyN3A5NUw4K2tuWndEYnJXTkNJa2VzK3hOM09jOGh2cldmWmxVWitXNi9MaEVWSS9aR2daVUk3RXpZeTR5ZjBOL0t4dmg5dDA0Sys3LzZiaGhNV1FJSFZrdTF0R0NjLzV3U1JJaSsrbEtXVnFFWFc0bUVwYXBSOURLL0RZbnVlOUJHTmhxdTcvQTVnbnFRYUQ1aHFpL0IrVzFSWmZGWVZIam9tQ1phbmhEdz09IiwidXBkYXRlZF9hdCI6IjE3NDcwODU2MzkiLCJ1cG4iOiJhLmphcmlmQG5leHRlY2guY29tIiwiZW1haWwiOiJhLmphcmlmQG5leHRlY2guY29tIiwibnhfcHBfYWNjdCI6IlBMQTAwMiIsIm54X2ljcF9hY2N0IjoiUExBV1JJUUEiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzA4NTYzOSwiZXhwIjoxNzQ3MTI4ODM5LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.GURw_Fj07LVZbVXy8RgPVh_sV9YcfceLK5Km3La32rA7cGVEmZxEBD7TmYmw5_cyIMb9mivDjy8axgPYa5gQf8JX7OO0FU3A2EkyiiY0-9dihuTktae4XjcNkCym0c2AVOBBjXsnD4DNIYMvzQ7F15CL7ZfzgxnGSTKzBYfmkz9h79yy37CwSg4AhII0ZfPDtnIzgQcNpOkUMHrUt7OxjF96IDYr9oKFFqxTJ2xCuDK6SQXfGZvjdTQtETxKNO61lVFEOSLRFVJ5RqvwGB_gKrgF_LIJGI3S7-aX48qBoonlhTNElAKS4R9mrAfSdz4Cq1KSB_WOIGpOe4IETPfd1A; __stripe_sid=982dfbfa-32d7-48a5-b2ee-87df15621929d16adb; ai_session=d//CG|1747085644859|1747089686906.4"
+					}
+				],
+				"url": {
+					"raw": "https://qa-pm.centralus.cloudapp.azure.com/api/user?expandRoles=false&expandUserPractices=false",
+					"protocol": "https",
+					"host": [
+						"qa-pm",
+						"centralus",
+						"cloudapp",
+						"azure",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "expandRoles",
+							"value": "false"
+						},
+						{
+							"key": "expandUserPractices",
+							"value": "false"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'https://qa-pm.centralus.cloudapp.azure.com/api/user?expandRoles=true&expandUserPractices=true' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'cache-control: no-cache' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'ai_user=0HT1F|2025-04-08T15:37:07.863Z; __stripe_mid=cf055ce9-fa83-42bb-b261-84a3b45e70097bbc91; __RequestVerificationToken=THiHQ8LWsNw9T_OmnQgvfdAqAc3SNCARQzxWQ-9KSdGR1i_rFHg1Rg49nOSZ2MLEHJCjvgicfQbSkXldlhBnn1057_iKNDv66cjrZnzsm0Q1; SupraMedBussApp=AccountNumber=BUSINESSAPPDB; ASP.NET_SessionId=ca2n215jy2bgdqlp0o0iewkt; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3MDg1NjM5IiwiaWF0IjoiMTc0NzA4NTYzOSIsImp0aSI6IjczYWM2ZWI3LTEzNjYtNGZjOC04YjA5LWZlZjRjODE5MjdhNCIsInN1YiI6IjkzMTEiLCJueF9pc254dXNlciI6IkZhbHNlIiwic3ViX2p3ayI6InhFd05QN29HcTlQdXNQbWZlWWdrSittWW1vRGxES2toVlhON2RPTXZCam5zbHJodTdrUmlCQy9laDJMczNCU25jdmZOZFJPMlg1eEluL1JiYlY4U0puMDMwdjA2OGdHYUI3Q2JFSkdITDQ0aGMxcmJqN2pyZGtqUFR0ZXNBN1NXVXVYZmdQOHMzSm96QVIvZHJUM2VsTFVaRjdlNUlQOWpOY1dxczRrZTByL3UyN3A5NUw4K2tuWndEYnJXTkNJa2VzK3hOM09jOGh2cldmWmxVWitXNi9MaEVWSS9aR2daVUk3RXpZeTR5ZjBOL0t4dmg5dDA0Sys3LzZiaGhNV1FJSFZrdTF0R0NjLzV3U1JJaSsrbEtXVnFFWFc0bUVwYXBSOURLL0RZbnVlOUJHTmhxdTcvQTVnbnFRYUQ1aHFpL0IrVzFSWmZGWVZIam9tQ1phbmhEdz09IiwidXBkYXRlZF9hdCI6IjE3NDcwODU2MzkiLCJ1cG4iOiJhLmphcmlmQG5leHRlY2guY29tIiwiZW1haWwiOiJhLmphcmlmQG5leHRlY2guY29tIiwibnhfcHBfYWNjdCI6IlBMQTAwMiIsIm54X2ljcF9hY2N0IjoiUExBV1JJUUEiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzA4NTYzOSwiZXhwIjoxNzQ3MTI4ODM5LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.GURw_Fj07LVZbVXy8RgPVh_sV9YcfceLK5Km3La32rA7cGVEmZxEBD7TmYmw5_cyIMb9mivDjy8axgPYa5gQf8JX7OO0FU3A2EkyiiY0-9dihuTktae4XjcNkCym0c2AVOBBjXsnD4DNIYMvzQ7F15CL7ZfzgxnGSTKzBYfmkz9h79yy37CwSg4AhII0ZfPDtnIzgQcNpOkUMHrUt7OxjF96IDYr9oKFFqxTJ2xCuDK6SQXfGZvjdTQtETxKNO61lVFEOSLRFVJ5RqvwGB_gKrgF_LIJGI3S7-aX48qBoonlhTNElAKS4R9mrAfSdz4Cq1KSB_WOIGpOe4IETPfd1A; __stripe_sid=982dfbfa-32d7-48a5-b2ee-87df15621929d16adb; ai_session=d//CG|1747085644859|1747089686906.4' \\\r\n  -H 'expires: 0' \\\r\n  -H 'pragma: no-cache' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://qa-pm.centralus.cloudapp.azure.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0' \\\r\n  --insecure"
+			},
+			"response": []
+		},
+		{
+			"name": "https://dev-pm.centralus.cloudapp.azure.com/Schedule/Schedule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,bn;q=0.7"
+					},
+					{
+						"key": "cache-control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "priority",
+						"value": "u=0, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://dev-pm.centralus.cloudapp.azure.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "document"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "navigate"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-user",
+						"value": "?1"
+					},
+					{
+						"key": "upgrade-insecure-requests",
+						"value": "1"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "Cookie",
+						"value": "ai_user=1k7qD|2025-03-20T13:18:25.925Z; __stripe_mid=81ef9cd0-cd58-4d8f-bea5-0cac710ceb4e27ac10; __RequestVerificationToken=S75j6GBUQ9IiSN0vCPo5P28Xnm3OmObdPVMg4Ew4Xqnvn3kw7N1oYbjiqUSAAImjGnfJwgwwj-hRl_J1BSVoiP2mYSNBP6Rif1zrFUrBAWA1; ASP.NET_SessionId=zqy0uhexbhfuuvv4tblhim5y; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3MjQ2NDU1IiwiaWF0IjoiMTc0NzI0NjQ1NSIsImp0aSI6IjczZWZjYWE1LTExYzctNDJjZS05ZGJmLThjYzQ2NWRmY2E5NyIsInN1YiI6IjE5MzIzIiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzQ3MjQ2NDU1IiwidXBuIjoici5mYXJoYWRAbmV4dGVjaC5jb20iLCJlbWFpbCI6InIuZmFyaGFkQG5leHRlY2guY29tIiwibnhfcHBfYWNjdCI6IlBMQTAwMSIsIm54X2ljcF9hY2N0IjoiUExBWVdSSSIsIm54X25leF9hY2N0IjoiIiwibmJmIjoxNzQ3MjQ2NDU1LCJleHAiOjE3NDcyODk2NTUsImlzcyI6Imh0dHBzOi8vc3NvLm5leHRlY2guY29tLyIsImF1ZCI6Im5leHRlY2guY29tIn0.gatRnnoMCqtK3YQCdICYSzqpPyRA-QVMX5UAaIGgTK-alEjwN9wyfKqHrtiuYRST9zOI9gX076JJOdeV-6syV3ovCHvf5KB2J9GLfv-niz5DYhn9zNlW45qmigKCRhc696TTwPWBU87_rhAIkylgtP9pw4pSGEGlvLO8dv3FT5d6OjDwb54iwjghfvwQKj0MLk3uP-lEymxZVm4kSOqvZKqapkTf3wo3xscCO3M5xuHpo4YlIuwD0YICJ58SinFONnpBgYsC-X99-z7qzPaWQWTO5-yJGK8p1ycSKNHuIBoFUdVgG6T5_b4NDY6zHb0MQm6Hs-fGrP9-aZn9-amTvg; __stripe_sid=cc3ffea0-3e48-4f62-82df-7ff915941c513ea387; ai_session=opPRL|1747246439180|1747247083143.7"
+					}
+				],
+				"url": {
+					"raw": "https://dev-pm.centralus.cloudapp.azure.com/Schedule/Schedule",
+					"protocol": "https",
+					"host": [
+						"dev-pm",
+						"centralus",
+						"cloudapp",
+						"azure",
+						"com"
+					],
+					"path": [
+						"Schedule",
+						"Schedule"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://dev-pm.centralus.cloudapp.azure.com/Schedule/Schedule' \\\n  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\n  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8,bn;q=0.7' \\\n  -H 'cache-control: max-age=0' \\\n  -b 'ai_user=1k7qD|2025-03-20T13:18:25.925Z; __stripe_mid=81ef9cd0-cd58-4d8f-bea5-0cac710ceb4e27ac10; __RequestVerificationToken=S75j6GBUQ9IiSN0vCPo5P28Xnm3OmObdPVMg4Ew4Xqnvn3kw7N1oYbjiqUSAAImjGnfJwgwwj-hRl_J1BSVoiP2mYSNBP6Rif1zrFUrBAWA1; ASP.NET_SessionId=zqy0uhexbhfuuvv4tblhim5y; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3MjQ2NDU1IiwiaWF0IjoiMTc0NzI0NjQ1NSIsImp0aSI6IjczZWZjYWE1LTExYzctNDJjZS05ZGJmLThjYzQ2NWRmY2E5NyIsInN1YiI6IjE5MzIzIiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzQ3MjQ2NDU1IiwidXBuIjoici5mYXJoYWRAbmV4dGVjaC5jb20iLCJlbWFpbCI6InIuZmFyaGFkQG5leHRlY2guY29tIiwibnhfcHBfYWNjdCI6IlBMQTAwMSIsIm54X2ljcF9hY2N0IjoiUExBWVdSSSIsIm54X25leF9hY2N0IjoiIiwibmJmIjoxNzQ3MjQ2NDU1LCJleHAiOjE3NDcyODk2NTUsImlzcyI6Imh0dHBzOi8vc3NvLm5leHRlY2guY29tLyIsImF1ZCI6Im5leHRlY2guY29tIn0.gatRnnoMCqtK3YQCdICYSzqpPyRA-QVMX5UAaIGgTK-alEjwN9wyfKqHrtiuYRST9zOI9gX076JJOdeV-6syV3ovCHvf5KB2J9GLfv-niz5DYhn9zNlW45qmigKCRhc696TTwPWBU87_rhAIkylgtP9pw4pSGEGlvLO8dv3FT5d6OjDwb54iwjghfvwQKj0MLk3uP-lEymxZVm4kSOqvZKqapkTf3wo3xscCO3M5xuHpo4YlIuwD0YICJ58SinFONnpBgYsC-X99-z7qzPaWQWTO5-yJGK8p1ycSKNHuIBoFUdVgG6T5_b4NDY6zHb0MQm6Hs-fGrP9-aZn9-amTvg; __stripe_sid=cc3ffea0-3e48-4f62-82df-7ff915941c513ea387; ai_session=opPRL|1747246439180|1747247083143.7' \\\n  -H 'priority: u=0, i' \\\n  -H 'referer: https://dev-pm.centralus.cloudapp.azure.com/' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  -H 'sec-fetch-dest: document' \\\n  -H 'sec-fetch-mode: navigate' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'sec-fetch-user: ?1' \\\n  -H 'upgrade-insecure-requests: 1' \\\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \\\n  --insecure"
+			},
+			"response": []
+		},
+		{
+			"name": "book appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Expires",
+						"value": "0"
+					},
+					{
+						"key": "Origin",
+						"value": "https://pm.dev.nextech.com"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://pm.dev.nextech.com/"
+					},
+					{
+						"key": "RequestVerificationToken",
+						"value": "7ueJL8GcWf76qSU4v1ZtdaMijkSMhqiUmbykrRAXZKcwa-JCXB7oPBZhuw1Hv6i-dOwHvHTVwSjW1VFwr39xZO3_Ua0DKrRNaM4_op2WDJg1:J8Itd4-8OFJcp3Vzdi-C31ir-ljhh6LZ7LFFTFz_WQtNNWPGYZuWSBBRwMI-F5EH0ioKQbesJuk3Lc2lN42KTKwpsNet8oxM0HnmrtqwygA1"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "_ga=GA1.1.1630919562.1741884402; _ga_9WXYK3PMB6=GS1.1.1741971420.2.0.1741971420.60.0.0; ASP.NET_SessionId=2tzywklolmw31kk0j1eaetui; __RequestVerificationToken=G46kQ7qphxmK1clwsxqv4yp7-NgxdAIZy5sseGCRrXviHQ64tTFDYrpm_VH1aJIdIQKQIDAv7JSENOXBF_LRKFdx8kcBKyq6gp9oEQPt-5U1; ai_user=G6Q/h|2025-05-16T13:06:02.836Z; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3NDAwODM3IiwiaWF0IjoiMTc0NzQwMDgzNyIsImp0aSI6ImI2MTViZDI0LTRhZjgtNDUxMC1iMTRiLWE2MTAxNjVhOTQ5NiIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzQ3NDAwODM3IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzQwMDgzNywiZXhwIjoxNzQ3NDQ0MDM3LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.Sulh0WYwZ5gVGlw5RL48M3Htx8e_LBwSqACDl5EDqKAUQaZUu1YfAcCo5v9mKDTevh5fUD5oZk64tM059ib9de3IXrIyz5XKDFd5iBxwZ9ipjcDgXZ4t1qQ2bQv6IXsNSN5k3FNiSC6y3NcUkSkaeR46Qh7Tg-h2QdLvt8Aq3tHDebIW4NfgkAedx9ge2-gtqWSusa0xEoVt6tMo1UQoR49hxF_zfj19U7gGJcXNmz2ORg_vo6lc3DArJveWAS4Gb7BGvc2hL5ll6M6jbdywKBUSOPkViosQeqy3r7mf4AfsGDW0cDzEBx7IsDmkZpjEgfkf71RlmSzKXRznmo2TKw; __stripe_mid=43856d48-085a-4403-8d35-3ddb7ae2ff3d3acca3; __stripe_sid=16f73ea6-ac5f-41dd-b239-23a47348f18e516528; ai_session=wJxn9|1747400762938|1747401062682.6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"startTime\": \"2025-05-16T13:15:00\",\r\n        \"patientId\": 2500,\r\n        \"resourceId\": 105,\r\n        \"facilityId\": 422,\r\n        \"appointmentTypeId\": 2,\r\n        \"appointmentReason\": \"Breast Augmentation\",\r\n        \"appointmentNotes\": \"testApi\",\r\n        \"patientWaitlistItemId\": null,\r\n        \"apptToRescheduleId\": null,\r\n        \"apptToRescheduleStatusId\": null,\r\n        \"followUpPlanAlertId\": null,\r\n        \"resourceId2\": null\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pm.dev.nextech.com/api/appointment/worklist/book-appointments",
+					"protocol": "https",
+					"host": [
+						"pm",
+						"dev",
+						"nextech",
+						"com"
+					],
+					"path": [
+						"api",
+						"appointment",
+						"worklist",
+						"book-appointments"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://pm.dev.nextech.com/api/appointment/worklist/book-appointments' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: en-US,en;q=0.9' \\\r\n  -H 'Cache-control: no-cache' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -b '_ga=GA1.1.1630919562.1741884402; _ga_9WXYK3PMB6=GS1.1.1741971420.2.0.1741971420.60.0.0; ASP.NET_SessionId=2tzywklolmw31kk0j1eaetui; __RequestVerificationToken=G46kQ7qphxmK1clwsxqv4yp7-NgxdAIZy5sseGCRrXviHQ64tTFDYrpm_VH1aJIdIQKQIDAv7JSENOXBF_LRKFdx8kcBKyq6gp9oEQPt-5U1; ai_user=G6Q/h|2025-05-16T13:06:02.836Z; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzQ3NDAwODM3IiwiaWF0IjoiMTc0NzQwMDgzNyIsImp0aSI6ImI2MTViZDI0LTRhZjgtNDUxMC1iMTRiLWE2MTAxNjVhOTQ5NiIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzQ3NDAwODM3IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc0NzQwMDgzNywiZXhwIjoxNzQ3NDQ0MDM3LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.Sulh0WYwZ5gVGlw5RL48M3Htx8e_LBwSqACDl5EDqKAUQaZUu1YfAcCo5v9mKDTevh5fUD5oZk64tM059ib9de3IXrIyz5XKDFd5iBxwZ9ipjcDgXZ4t1qQ2bQv6IXsNSN5k3FNiSC6y3NcUkSkaeR46Qh7Tg-h2QdLvt8Aq3tHDebIW4NfgkAedx9ge2-gtqWSusa0xEoVt6tMo1UQoR49hxF_zfj19U7gGJcXNmz2ORg_vo6lc3DArJveWAS4Gb7BGvc2hL5ll6M6jbdywKBUSOPkViosQeqy3r7mf4AfsGDW0cDzEBx7IsDmkZpjEgfkf71RlmSzKXRznmo2TKw; __stripe_mid=43856d48-085a-4403-8d35-3ddb7ae2ff3d3acca3; __stripe_sid=16f73ea6-ac5f-41dd-b239-23a47348f18e516528; ai_session=wJxn9|1747400762938|1747401062682.6' \\\r\n  -H 'Expires: 0' \\\r\n  -H 'Origin: https://pm.dev.nextech.com' \\\r\n  -H 'Pragma: no-cache' \\\r\n  -H 'Referer: https://pm.dev.nextech.com/' \\\r\n  -H 'RequestVerificationToken: 7ueJL8GcWf76qSU4v1ZtdaMijkSMhqiUmbykrRAXZKcwa-JCXB7oPBZhuw1Hv6i-dOwHvHTVwSjW1VFwr39xZO3_Ua0DKrRNaM4_op2WDJg1:J8Itd4-8OFJcp3Vzdi-C31ir-ljhh6LZ7LFFTFz_WQtNNWPGYZuWSBBRwMI-F5EH0ioKQbesJuk3Lc2lN42KTKwpsNet8oxM0HnmrtqwygA1' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '[{\"startTime\":\"2025-05-16T13:15:00\",\"patientId\":2500,\"resourceId\":105,\"facilityId\":422,\"appointmentTypeId\":2,\"appointmentReason\":\"Breast Augmentation\",\"appointmentNotes\":\"testApi\",\"patientWaitlistItemId\":null,\"apptToRescheduleId\":null,\"apptToRescheduleStatusId\":null,\"followUpPlanAlertId\":null,\"resourceId2\":null}]'"
+			},
+			"response": []
+		},
+		{
+			"name": "https://pm.dev.nextech.com/api/appointment/worklist/Availability",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Expires",
+						"value": "0"
+					},
+					{
+						"key": "Origin",
+						"value": "https://pm.dev.nextech.com"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"skip\": 0,\r\n    \"take\": 10,\r\n    \"fromDate\": \"2025-07-01\",\r\n    \"resourceIds\": [\r\n        105\r\n    ],\r\n    \"resourceIdsGroupList\": [\r\n        [\r\n            105\r\n        ],\r\n        []\r\n    ],\r\n    \"facilityIds\": [],\r\n    \"appointmentTypeIds\": [\r\n        2\r\n    ],\r\n    \"dayOfWeekPreferences\": [],\r\n    \"timeOfDayPreferences\": [],\r\n    \"timePreferences\": [],\r\n    \"startDateShortcut\": 0,\r\n    \"scheduleSlotType\": 1,\r\n    \"bookingPreference\": 1,\r\n    \"redirectToScheduler\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pm.dev.nextech.com/api/appointment/worklist/Availability",
+					"protocol": "https",
+					"host": [
+						"pm",
+						"dev",
+						"nextech",
+						"com"
+					],
+					"path": [
+						"api",
+						"appointment",
+						"worklist",
+						"Availability"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://pm.dev.nextech.com/api/appointment/worklist/Availability' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: en-US,en;q=0.9' \\\r\n  -H 'Cache-control: no-cache' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -b 'ASP.NET_SessionId=nl4f0cqxceppj4up3hxr5ufd; __RequestVerificationToken=p8796TfoiWD96yQTtptaY8z3e5YVamRqAAVx5DfglD_fs1oj3XFR3v_8-wpZf0GnTcdqqwt_07pt85uM5aZLJrKRw6rnm917R6OeQytarvI1; ai_user=i/64h|2025-07-01T16:04:43.950Z; NextechToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbXIiOiJwd2QiLCJhdXRoX3RpbWUiOiIxNzUxMzg1OTQ1IiwiaWF0IjoiMTc1MTM4NTk0NSIsImp0aSI6ImZjMTMzZGZkLTU5OTYtNDk4Ni1iZWVhLTNhNmMzZmM4NGNiOCIsInN1YiI6IjE0NjA2IiwibnhfaXNueHVzZXIiOiJGYWxzZSIsInN1Yl9qd2siOiJyLytteFVMT093ZVJlSWdacVRwbGltV1FyeW9la0M2NHlaeUFuL1gzMEg4am1reTFHem1XU29BVVNhaEdRaktiOU5xeWRQSHJpY1g4SnVtRkFhYWJLTHAvcFhsSEEzdGlyTllIZ2Fyb2c1Y2tsQjR5SFZIUTdYY0xIWmwxRzBHTEdVaFErUytLbWdRTGhUWlJtUEEwWDlscUZTTitlT3NqL1E5OHpEemhsSEtjMjJacDVNM0hJekljNWMzd3l0R21LOXJQdkZEVTZPTUM0NExzcVhZOTd5SldPMzB6bXpxVFc5eVdTa1l1ODdVUG51R2RJaWNlL3lYZEYvN2xMc3c2QWdVajVjY1R2WXFPT050VlE2UjkrQTFsRDBid1cwcWVYQzNjMlp3SGREck9DTUg5M1dYdEhqQ3JXS2Uzb2JPQUZoVDF2dUhTWk1MZ2JlTVErWDkrTFE9PSIsInVwZGF0ZWRfYXQiOiIxNzUxMzg1OTQ1IiwidXBuIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsImVtYWlsIjoiYS5qYXJpZkBuZXh0ZWNoLmNvbSIsIm54X3BwX2FjY3QiOiJQTEEwMDEiLCJueF9pY3BfYWNjdCI6IlBMQVlXUkkiLCJueF9uZXhfYWNjdCI6IiIsIm5iZiI6MTc1MTM4NTk0NSwiZXhwIjoxNzUxNDI5MTQ1LCJpc3MiOiJodHRwczovL3Nzby5uZXh0ZWNoLmNvbS8iLCJhdWQiOiJuZXh0ZWNoLmNvbSJ9.SmVKhLBG4XsEeAayXXZC5FBmg5ArfmD-fH-PCvYvqM-s6Xxn0Cnlkj6T4IdLS9MHryaHo1_XZzatlk1uaq9wNB0deyOIuF4zjQqZqX0QaxuDwnxrLBkZN1snXC2YRE3OGlsdmFLq6imByfTfr8OtNAS9RF-VtVLpJ5Vvq_HOeiTU8s1TG7yfWNUa26fT_eM0ipwOtWaYuzkcjAydznexScI8vZGtPTvYYgj4dUKT1YmOA84auo6AOpi93itMPQcDYvh9vGM_Qrmn1_HrPv5qt2K36pyIkKK2gwpvYrizB4Fanvttadw3hgzPPlsE5811DY1Aqjkib00PPQroOcEucg; __stripe_mid=bd8fae6c-20aa-42af-ae66-429b50d6a0f0e41a01; __stripe_sid=90b46de7-f4f7-454e-ac9b-8775279436909d7532; ai_session=aQSgX|1751385884366|1751389028294.3' \\\r\n  -H 'Expires: 0' \\\r\n  -H 'Origin: https://pm.dev.nextech.com' \\\r\n  -H 'Pragma: no-cache' \\\r\n  -H 'Referer: https://pm.dev.nextech.com/' \\\r\n  -H 'RequestVerificationToken: 8iIpOjw4XXrB32hV1aiPu2hFuRX1iMbhWa-bpw74NLVkaEPflUbZRC1Wf4sowPf5fb4ses9BVSM0zMSjhVSbU8JsYF-rgYU36udTBzyJ_P41:eUnL_uxUS5SMj83Y0OmsrEjxFfvV1zx8OVR0mOh2mY2dP-7hv_PbMkHjle_V_kSIF-aSTnNMtiJpBdDPeLfOPon1bbjoTyM89e9JXLD7aws1' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Microsoft Edge\";v=\"138\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"skip\":0,\"take\":10,\"fromDate\":\"2025-07-01\",\"resourceIds\":[105],\"resourceIdsGroupList\":[[105],[]],\"facilityIds\":[],\"appointmentTypeIds\":[2],\"dayOfWeekPreferences\":[],\"timeOfDayPreferences\":[],\"timePreferences\":[],\"startDateShortcut\":0,\"scheduleSlotType\":1,\"bookingPreference\":1,\"redirectToScheduler\":null}'"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://dev-pm.centralus.cloudapp.azure.com",
+			"type": "default"
+		},
+		{
+			"key": "password",
+			"value": "UVd)Kp91!",
+			"type": "default"
+		},
+		{
+			"key": "username",
+			"value": "a.jarif@nextech.com",
+			"type": "default"
+		},
+		{
+			"key": "nx-practice-id",
+			"value": "PLA001",
+			"type": "default"
+		}
+	]
+}
